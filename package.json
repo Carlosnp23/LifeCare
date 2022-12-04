@@ -1,0 +1,20 @@
+{
+  "name": "lifecare",
+  "version": "1.0.0",
+  "description": "Service for a Patient Clinical ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Carlos Norambuena",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "install": "^0.13.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.7.0",
+    "nodemon": "^2.0.20",
+    "npm": "^9.1.3"
+  }
+}
