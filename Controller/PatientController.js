@@ -16,7 +16,7 @@ exports.addPatient = function (req, callback) {
     objPatient.save ( function (err, returnPatient ) {
 
         if (err) callback({ state: { code: 2, text: err.message }})
-        callback({ state: { Code: 1, text: 'Successful Process' }, Users: returnPatient })
+        callback({ state: { Code: 1, text: 'Successful Process' }, Patient: returnPatient })
 
     })
 }
@@ -34,7 +34,7 @@ exports.updatePatient = function (req, callback) {
         findPatient.save ( function (err, update ) {
 
             if (err) callback({ state: { code: 2, text: err.message }})
-            callback({ state: { Code: 1, text: 'Successful Process' }, Users: update })
+            callback({ state: { Code: 1, text: 'Successful Process' }, Patient: update })
     
         })
 
@@ -64,7 +64,7 @@ exports.findbyIdPatient = function (req, callback) {
     PatientModel.findById(req.params.id, function(err, findPatient) {
 
         if (err) callback({ state: { code: 2, text: err.message }})
-        callback({ state: { Code: 1, text: 'Successful Process' }, Users: findPatient })
+        callback({ state: { Code: 1, text: 'Successful Process' }, Patient: findPatient })
 
     })
 
@@ -75,7 +75,7 @@ exports.findAllPatient = function (req, callback) {
     PatientModel.find( {}, function(err, findPatient) {
 
         if (err) callback({ state: { code: 2, text: err.message }})
-        callback({ state: { Code: 1, text: 'Successful Process' }, Users: findPatient })
+        callback({ state: { Code: 1, text: 'Successful Process' }, Patient: findPatient })
 
     })
 
