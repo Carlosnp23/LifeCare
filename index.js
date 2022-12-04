@@ -55,11 +55,8 @@ var controllerPatient = require('./Controller/PatientController')
 
 var router = express.Router()
 
-router.get('/Patient/findAllPatient', function (req, res) {
-  controllerPatient.findAllPatient(req, function(data) {
-        res.send(data)
-    })
-    console.log(" Listed Patients " )
+router.get('/', function(req, res) {
+    res.send("Hola bienvenido a mi servicio web || Hello welcome to my web service")
 })
 
 //Add Patient
