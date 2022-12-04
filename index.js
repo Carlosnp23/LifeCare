@@ -8,7 +8,7 @@ var DEFAULT_PORT = 3000
 var DEFAULT_HOST = '127.0.0.1'
 
 var port = process.env.PORT || DEFAULT_PORT
-var ipAddress = DEFAULT_HOST
+var ipAddress = process.env.IP || DEFAULT_HOST
 
 //Connection data
 const user = "centennial"
