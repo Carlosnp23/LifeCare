@@ -8,8 +8,8 @@ exports.addPatient = function (req, callback) {
     var objPatient = new PatientModel()
     objPatient.First_Name = req.body.First_Name
     objPatient.Last_Name = req.body.Last_Name
-    objPatient.Address = req.body.Address
     objPatient.Gender = req.body.Gender
+    objPatient.Address = req.body.Address
     objPatient.Mobile = req.body.Mobile
     objPatient.Email = req.body.Email
 
