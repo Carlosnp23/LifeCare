@@ -1,6 +1,8 @@
 var mongoose = require("mongoose")
 require('../Model/Patient')
 var PatientModel = mongoose.model('Patient')
+var PatientModel = mongoose.model('PatientTests')
+
 
 //Add Patient
 exports.addPatient = function (req, callback) {
