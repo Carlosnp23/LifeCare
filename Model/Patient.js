@@ -12,3 +12,15 @@ var patientSchema = new Schema({
 })
 
 module.exports = mongoose.model('Patient', patientSchema)
+
+
+var patientTestsSchema = new Schema({
+    Full_Name: String, 
+    BloodPressure: String,
+    RespiratoryRate: String,
+    BloodOxygenLevel: String,
+    HeartBeatRate: String,
+    create_at: { type: Date, require: true, default: Date.now },
+})
+
+module.exports = mongoose.model('PatientTests', patientTestsSchema)

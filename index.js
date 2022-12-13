@@ -86,7 +86,7 @@ router.delete('/Patient/DeletePatient/:id', function (req, res) {
 
 //Find Patient
 router.get('/Patient/findbyIdPatient/:id', function (req, res) {
-  controllerPatient.findAllPatient(req, function(data) {
+  controllerPatient.findbyIdPatient(req, function(data) {
         res.send(data)
     })
     console.log(" Patient Found " )
@@ -99,5 +99,22 @@ router.get('/Patient/findAllPatient', function (req, res) {
     })
     console.log(" Listed Patients " )
 })
+
+
+//Add Patient Test
+router.post('/Patient/addPatientTest', function (req, res) {
+    controllerPatient.addPatientTest(req, function(data) {
+          res.send(data)
+      })
+      console.log(" Patient Test Added " )
+  })
+
+//Find Patient Test
+router.get('/Patient/findbyIdPatientTest/:id', function (req, res) {
+    controllerPatient.findbyIdPatientTest(req, function(data) {
+          res.send(data)
+      })
+      console.log(" Patient Test Found " )
+  })
 
 app.use(router)

@@ -69,6 +69,7 @@ exports.findbyIdPatient = function (req, callback) {
     })
 
 }
+
 //List Patient
 exports.findAllPatient = function (req, callback) {
 
@@ -76,6 +77,37 @@ exports.findAllPatient = function (req, callback) {
 
         if (err) callback({ state: { code: 2, text: err.message }})
         callback({ state: { Code: 1, text: 'Successful Process' }, Patient: findPatient })
+
+    })
+
+}
+
+
+//Add Patient Test
+exports.addPatientTest = function (req, callback) {
+
+    var objPatientTest = new PatientModel()
+    objPatientTest.Full_Name = req.body.Full_Name
+    objPatientTest.BloodPressure = req.body.BloodPressure
+    objPatientTest.RespiratoryRate = req.body.RespiratoryRate
+    objPatientTest.BloodOxygenLevel = req.body.BloodOxygenLevel
+    objPatientTest.HeartBeatRate = req.body.HeartBeatRate
+
+    objPatientTest.save ( function (err, returnPatientTest ) {
+
+        if (err) callback({ state: { code: 2, text: err.message }})
+        callback({ state: { Code: 1, text: 'Successful Process' }, Patient: returnPatientTest })
+
+    })
+}
+
+//Find Patient Test
+exports.findbyIdPatientTest = function (req, callback) {
+
+    PatientModel.findById(req.params.id, function(err, findPatientTest) {
+
+        if (err) callback({ state: { code: 2, text: err.message }})
+        callback({ state: { Code: 1, text: 'Successful Process' }, Patient: findPatientTest })
 
     })
 
