@@ -1,7 +1,7 @@
 var mongoose = require("mongoose")
-var Schema = mongoose.Schema
+var SchemaTest = mongoose.Schema
 
-var patientTestSchema = new Schema({
+var patientTestSchema = new SchemaTest({
     Full_Name: String, 
     BloodPressure: String,
     RespiratoryRate: String,
