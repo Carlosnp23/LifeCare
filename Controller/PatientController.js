@@ -1,5 +1,6 @@
 var mongoose = require("mongoose")
 require('../Model/Patient')
+require('../Model/PatientTest')
 var PatientModel = mongoose.model('Patient')
 var PatientTestModel = mongoose.model('PatientTest')
 
