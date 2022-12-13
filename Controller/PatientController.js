@@ -1,7 +1,7 @@
 var mongoose = require("mongoose")
 require('../Model/Patient')
 var PatientModel = mongoose.model('Patient')
-var PatientModel = mongoose.model('PatientTests')
+var PatientTestModel = mongoose.model('PatientTest')
 
 
 //Add Patient
@@ -88,7 +88,7 @@ exports.findAllPatient = function (req, callback) {
 //Add Patient Test
 exports.addPatientTest = function (req, callback) {
 
-    var objPatientTest = new PatientModel()
+    var objPatientTest = new PatientTestModel()
     objPatientTest.Full_Name = req.body.Full_Name
     objPatientTest.BloodPressure = req.body.BloodPressure
     objPatientTest.RespiratoryRate = req.body.RespiratoryRate
@@ -106,7 +106,7 @@ exports.addPatientTest = function (req, callback) {
 //Find Patient Test
 exports.findbyIdPatientTest = function (req, callback) {
 
-    PatientModel.findById(req.params.id, function(err, findPatientTest) {
+    PatientTestModel.findById(req.params.id, function(err, findPatientTest) {
 
         if (err) callback({ state: { code: 2, text: err.message }})
         callback({ state: { Code: 1, text: 'Successful Process' }, Patient: findPatientTest })
